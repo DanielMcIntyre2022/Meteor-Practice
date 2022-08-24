@@ -1,7 +1,14 @@
 import React from "react";
 
 export const Task = ({
-    task
+    task, onCheckboxClick
 }) => {
-    return <li>{task.text}</li>
+    return <li>
+        <input type="checkbox"
+            checked={!!task.isChecked}
+            onClick={() => onCheckboxClick(task)}
+            readOnly
+        />
+        <span> {task.text} </span>    
+    </li>
 }
